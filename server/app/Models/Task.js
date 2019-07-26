@@ -11,6 +11,13 @@ class Task extends Model {
   static get primaryKey(){
     return 'id'
   }
+
+  users(){
+    return this.belongsTo('App/Models/User')
+  }
+
+
+
 }
 
 module.exports = Task
