@@ -16,12 +16,17 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
+
 Route.on('/').render('welcome')
 
 Route.group(()=>{
-  Route.get('tasks','TaskController.index')
-  Route.post('task','TaskController.store')
-  Route.get('task/:id','TaskController.show')
-  Route.put('task/:id','TaskController.update')
-  Route.delete('task/:id','TaskController.delete')
-}).prefix('api')
+  Route
+    .resource('users','UserController')
+    .validator(new Map([
+    [['users.store'], ['SaveUser']],
+    [['users.update'],['UpdateUser']]
+  ]))
+
+  Route.resource('tasks','TaskController')
+
+}).prefix('api/v1/')

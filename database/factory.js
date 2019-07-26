@@ -11,11 +11,21 @@
 |
 */
 
-/** @type {import('@adonisjs/lucid/src/Factory')} */
-// const Factory = use('Factory')
 
-// Factory.blueprint('App/Models/User', (faker) => {
-//   return {
-//     username: faker.username()
-//   }
-// })
+/** @type {import('@adonisjs/lucid/src/Factory')} */
+const Factory = use('Factory')
+
+Factory.blueprint('App/Models/Task', async (faker,i,data) => {
+  return {
+    task_name: faker.sentence()
+  }
+})
+
+
+Factory.blueprint('App/Models/User', async(faker) => {
+  return {
+    username: faker.first(),
+    email: faker.email(),
+    password: faker.password()
+  }
+})

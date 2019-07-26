@@ -5,7 +5,7 @@ class TaskController {
 
   //Get all tasks
   async index({response}){
-    let tasks = await Task.all()
+    let tasks = await Task.query().with('users').fetch()
     return response.json(tasks)
   }
 
@@ -14,6 +14,7 @@ class TaskController {
     let input = request.all();
     let task = new Task()
     task.task_name = input.task_name
+    task.user_id = input.user_id
     await task.save()
     return response.status(201).json(task)
   }
