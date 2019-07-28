@@ -1,29 +1,34 @@
 'use strict'
 
+/*
+ * All commonly used functions are placed here, mostly CRUD operations
+ */
+
+
 const _ = require('lodash')
 
 class BaseRepository{
 
   constructor(model){
     this.model = model
+    this.noRecordFound = 'No record found'
   }
 
-// //Get all users
+// //Get all records
   async index(response){
     let result = await this.model.all()
-    return response.json(result)
+    return response.json({data:result})
   }
 
 
-  //Save a user
+  //Save a record
   async store(request,response){
     let input = request.except(['password_confirmation']);
     let modelObj = new this.model()
 
-    //check if input is empty object
-    if(typeof input != 'object' || _.isEmpty(input)){
-      return response.status(400).json({msg:'No input data found'})
-    }
+    /*
+      *check if the input is not empty -> No need to check here, validator on route will take care of this
+    */
 
     //assigning input data in db fields
     _.forEach(input,function(e,i){
@@ -32,35 +37,51 @@ class BaseRepository{
 
     await modelObj.save()
 
-    return response.status(201).json(modelObj)
+    return response.status(201).json({msg: this.model.name + 'created successfully',data:modelObj})
   }
 
 
-  //Show single user
-  async show({params,response}){
-    const user = await this.model.find(params.id)
-    return response.json(user)
+  //Show single record
+  async show(params,response){
+    const modelObj = await this.model.find(params.id)
+    if(!modelObj){
+      return response.status(404).json({msg:this.noRecordFound})
+    }
+    return response.json({data:modelObj})
   }
 
-  //Update
-  async update({params,request,response}){
+
+  //Update a record
+  async update(params,request,response){
     const input = request.all()
-    const user = await this.model.find(params.id)
-    if(!user){
-      return response.status(404).json({data:'Data not found'})
+    const modelObj = await this.model.find(params.id)
+
+    //check if the row related to this id exists
+    if(!modelObj){
+      return response.status(404).json({msg:this.noRecordFound})
     }
-    user.user_name = input.user_name
-    await user.save()
-    return response.status(200).json(user)
+
+    /*
+    *check if the input is not empty -> No need to check here, validator on route will take care of this
+    */
+
+    //assigning input data in db fields
+    _.forEach(input,function(e,i){
+      modelObj[i] = e
+    })
+
+    await modelObj.save()
+    return response.status(200).json({msg: this.model.name + ' has been updated', data:modelObj})
   }
 
-  async delete({params,response}){
-    const user = await this.model.find(params.id)
-    if(!user){
-      return response.status(404).json({data:"user not found"})
+
+  async destroy(params,response){
+    const modelObj = await this.model.find(params.id)
+    if(!modelObj){
+      return response.status(404).json({data:this.noRecordFound})
     }
-    await user.delete()
-    return response.status(204).json({msg:"user deleted",user})
+    await modelObj.delete()
+    return response.status(204).json({msg:this.model.name+ " deleted",modelObj})
   }
 }
 

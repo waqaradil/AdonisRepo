@@ -49,8 +49,15 @@ const aceProviders = [
 */
 const aliases = {
   TaskModel : 'App/Models/Task',
+
+  //Repositories
+  BaseRepository:'App/Repositories/BaseRepository',
   UserRepository:'App/Repositories/UserRepository',
-  TaskRepository:'App/Repositories/TaskRepository'
+  TaskRepository:'App/Repositories/TaskRepository',
+
+  //Controllers
+  BaseController: 'App/Controllers/Http/BaseController'
+
 }
 
 /*

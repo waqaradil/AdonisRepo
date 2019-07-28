@@ -11,9 +11,10 @@ class UserRepository extends BaseRepository{
 
 }
 
-ioc.bind('UserRespository', function (app) {
+ioc.bind('UserRepository', function (app) {
   const Model = app.use('App/Models/User')
   return new UserRepository(Model)
 })
-module.exports = ioc.use('UserRespository')
+
+module.exports = ioc.use('UserRepository')
 

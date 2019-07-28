@@ -1,14 +1,11 @@
 'use strict'
+const SaveUser =  use('./SaveUser')
+class UpdateUser extends SaveUser{
 
-class UpdateUser {
   get rules () {
-    return {
-      id:'required',
-      email:'required|email|unique',
-      username:'required',
-      password:'required|min:6'
-    }
+    return {}
   }
+
 }
 
 module.exports = UpdateUser

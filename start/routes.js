@@ -21,12 +21,12 @@ Route.on('/').render('welcome')
 
 Route.group(()=>{
   Route
-    .resource('users','UserController')
+    .resource('users','Api/UserController')
     .validator(new Map([
     [['users.store'], ['SaveUser']],
     [['users.update'],['UpdateUser']]
   ]))
 
-  Route.resource('tasks','TaskController')
+  Route.resource('tasks','Api/TaskController')
 
 }).prefix('api/v1/')

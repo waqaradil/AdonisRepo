@@ -10,7 +10,7 @@ class TaskRepository extends BaseRepository{
   }
 }
 
-ioc.bind('TaskRespository', function (app) {
+ioc.singleton('TaskRespository', function (app) {
   const Model = app.use('App/Models/Task')
   return new TaskRepository(Model)
 })
