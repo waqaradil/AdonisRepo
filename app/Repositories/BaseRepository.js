@@ -81,7 +81,7 @@ class BaseRepository{
       return response.status(404).json({data:this.noRecordFound})
     }
     await modelObj.delete()
-    return response.status(204).json({msg:this.model.name+ " deleted",modelObj})
+    return response.status(204).json({msg:this.model.name+ " deleted",data:modelObj})
   }
 }
 

@@ -11,7 +11,7 @@ class UserRepository extends BaseRepository{
 
 }
 
-ioc.bind('UserRepository', function (app) {
+ioc.singleton('UserRepository', function (app) {
   const Model = app.use('App/Models/User')
   return new UserRepository(Model)
 })

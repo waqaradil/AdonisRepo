@@ -32,7 +32,6 @@ class BaseController{
     return this.repo.destroy(params,response)
   }
 
-
 }
 
 module.exports = BaseController
