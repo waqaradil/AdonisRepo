@@ -2,6 +2,14 @@
 
 class SaveUser {
 
+  get sanitizationRules (){
+    return {
+    email:'trim|normalize_email',
+    password: 'trim'
+    }
+
+  }
+
   get rules () {
     return {
       email:'required|email|unique:users',

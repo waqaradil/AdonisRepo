@@ -20,7 +20,6 @@ const providers = [
   '@adonisjs/session/providers/SessionProvider',
   '@adonisjs/auth/providers/AuthProvider',
   '@adonisjs/validator/providers/ValidatorProvider'
-
 ]
 
 /*
@@ -48,7 +47,11 @@ const aceProviders = [
 |   { Route: 'Adonis/Src/Route' }
 |
 */
-const aliases = {}
+const aliases = {
+  TaskModel : 'App/Models/Task',
+  UserRepository:'App/Repositories/UserRepository',
+  TaskRepository:'App/Repositories/TaskRepository'
+}
 
 /*
 |--------------------------------------------------------------------------
