@@ -27,8 +27,10 @@
     "@adonisjs/session": "^1.0.27",
     "@adonisjs/shield": "^1.0.8",
     "@adonisjs/validator": "^5.0.6",
+    "case": "^1.6.2",
     "lodash": "^4.17.15",
-    "mysql": "^2.17.1"
+    "mysql": "^2.17.1",
+    "pluralize": "^8.0.0"
   },
   "devDependencies": {},
   "autoload": {

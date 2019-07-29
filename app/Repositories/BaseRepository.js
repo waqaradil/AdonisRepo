@@ -37,7 +37,7 @@ class BaseRepository{
 
     await modelObj.save()
 
-    return response.status(201).json({msg: this.model.name + 'created successfully',data:modelObj})
+    return response.status(201).json({msg: this.model.name + ' created successfully',data:modelObj})
   }
 
 
@@ -62,7 +62,7 @@ class BaseRepository{
     }
 
     /*
-    *check if the input is not empty -> No need to check here, validator on route will take care of this
+    *check if the input is not empty -> No need to check here, validator on route will take care of it
     */
 
     //assigning input data in db fields
@@ -81,7 +81,7 @@ class BaseRepository{
       return response.status(404).json({data:this.noRecordFound})
     }
     await modelObj.delete()
-    return response.status(204).json({msg:this.model.name+ " deleted",data:modelObj})
+    return response.status(200).json({msg:this.model.name+ " deleted",data:modelObj})
   }
 }
 

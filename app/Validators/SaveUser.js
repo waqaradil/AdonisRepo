@@ -4,10 +4,9 @@ class SaveUser {
 
   get sanitizationRules (){
     return {
-    email:'trim|normalize_email',
-    password: 'trim'
+      email:'trim|normalize_email',
+      password: 'trim'
     }
-
   }
 
   get rules () {
@@ -30,17 +29,12 @@ class SaveUser {
   }
 
   async fails (errorMessages) {
-
     return this.ctx.response.send(errorMessages)
   }
 
   get validateAll () {
     return true
   }
-
-
-
-
 }
 
 module.exports = SaveUser

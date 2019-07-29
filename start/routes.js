@@ -20,13 +20,18 @@ const Route = use('Route')
 Route.on('/').render('welcome')
 
 Route.group(()=>{
-  Route
-    .resource('users','Api/UserController')
+  Route.resource('users','Api/UserController')
     .validator(new Map([
-    [['users.store'], ['SaveUser']],
-    [['users.update'],['UpdateUser']]
-  ]))
+      [['users.store'], ['SaveUser']],
+      [['users.update'],['UpdateUser']],
+      [['users.delete'],['DeleteUser']]
+    ]))
 
   Route.resource('tasks','Api/TaskController')
+    .validator(new Map(
+      [
+        [['tasks.store'],['Task']]
+      ]
+    ))
 
 }).prefix('api/v1/')
