@@ -4,6 +4,7 @@ const { Command } = require('@adonisjs/ace')
 const _case = require('case')
 const pluralize = require('pluralize')
 const fs = require('fs')
+const fse = require('fs-extra')
 
 class Module extends Command {
   static get signature () {
@@ -11,6 +12,7 @@ class Module extends Command {
       module
       {name: Name of the module}
       {model: Name of the model(Singular & capitalized version of your db table)}
+      {--rollback: Delete module files}
       `
   }
 
@@ -19,21 +21,70 @@ class Module extends Command {
   }
 
   async handle (args, options) {
-    // this.info('Dummy implementation for quote command, args=' +  + ' and flag= '+ options)
-    // console.log(`the class name is ${args.name}`)
-    // await this.writeFile(Helpers.appRoot(`App/Controllers/Http/First.js`), '…')
 
-
-
-    if(_case.of(args.name) != 'capital' && _case.of(args.name) != 'pascal'){
+    /****************************
+    *VALIDATION
+    ****************************/
+    if(_case.of(args.name) !== 'capital' && _case.of(args.name) !== 'pascal'){
       this.error('ERROR: The case of module name should be Capital or PascalCase')
       return false;
     }
 
-    if(_case.of(args.model) != 'capital' && _case.of(args.model) != 'pascal'){
+    if(_case.of(args.model) !== 'capital' && _case.of(args.model) !== 'pascal'){
       this.error('ERROR: The case of model(param 2) name should be Capital or PascalCase')
       return false;
     }
+
+    /****************************
+     *DELETE
+     ****************************/
+    if(options.rollback){
+      this.warn('########## FILES ##########')
+      let files_to_be_deleted = [
+        'app/Repositories/'+args.name+'Repository.js',
+        'app/Controllers/Http/Api/'+args.name+'Controller.js',
+        'app/Models/'+args.model+'.js',
+        'app/Validators/'+args.name+'.js'
+      ]
+
+      files_to_be_deleted.forEach((v,i)=>{
+        this.warn(i+1+'. '+v)
+      })
+
+      let ask_delete = await this.ask(this.chalk.red("All above files will be deleted. Are you sure? (y/n)"))
+
+      if(ask_delete !== 'y'){
+        this.error("Operation Aborted")
+        return false
+      }
+
+      await Promise.all(files_to_be_deleted.map(async (file) => {
+        let dest_name = 'app/RecycleBin/'+file;
+        //check src path
+        if( this.pathExists(file)){
+          //check dest path
+          if( this.pathExists('app/RecycleBin/'+file)){
+            dest_name = 'app/RecycleBin/'+file+'_'+Math.floor(new Date() / 1000)
+          }
+          try {
+            await fse.moveSync(file,dest_name)
+            this.info("Deleted: "+file)
+          }catch (e) {
+            console.log(e.message)
+          }
+
+
+        }
+      })).then(()=>this.warn(this.chalk.blue("ALL DONE, Make sure to manually delete the route path of this module.")));
+
+      return true //to stop further execution of script.
+    }
+
+
+
+    /****************************
+     *CREATE
+     ****************************/
 
     //MODEL CODE
     let model_content = "'use strict'\n" +
@@ -131,13 +182,13 @@ class Module extends Command {
       "\n" +
       "module.exports = "+args.name
 
-    //WRITING CONTROLLER FILES
+    //WRITING API CONTROLLER FILES
     const controller_exists = await this.pathExists('app/Controllers/Http/Api/'+args.name+'Controller.js')
     if(controller_exists){
       this.warn(args.name+"Controller already exists")
     }else{
       await this.writeFile('app/Controllers/Http/Api/'+args.name+'Controller.js',controller_content)
-      this.success(args.name+"Controller is created")
+      this.info(args.name+"Controller is created")
     }
 
     //WRITING REPO FILES
@@ -146,7 +197,7 @@ class Module extends Command {
       this.warn(args.name+"Repository already exists")
     }else{
       await this.writeFile('app/Repositories/'+args.name+'Repository.js',repository_content)
-      this.success(args.name+"Repository is created")
+      this.info(args.name+"Repository is created")
     }
 
     //WRITING MODEL FILES
@@ -155,7 +206,16 @@ class Module extends Command {
       this.warn(args.model+" (Model) already exists")
     }else{
       await this.writeFile('app/Models/'+args.model+'.js',model_content)
-      this.success(args.model+" (Model) is created")
+      this.info(args.model+" (Model) is created")
+    }
+
+    //WRITING ROUTES FILE
+    try {
+      let route_content = "Route.resource('"+args.name.toLowerCase()+"','Api/"+args.name+"Controller')\n"
+      fs.appendFileSync('start/routes.js', route_content);
+      this.info('Route added')
+    } catch (err) {
+      this.error("Unable to add routes in start/routes.js")
     }
 
     //WRITING VALIDATOR FILES
@@ -167,22 +227,15 @@ class Module extends Command {
         this.warn(args.name+" (Validator) already exists")
       }else{
         await this.writeFile('app/Validators/'+args.name+'.js',validator_content)
-        this.success(args.model+" (Validator) is created")
+        this.info(args.model+" (Validator) is created")
       }
     }
 
-    //WRITING ROUTES FILE
-    try {
-      let route_content = "Route.resource('"+args.name.toLowerCase()+"','Api/"+args.name+"Controller')"
-      fs.appendFileSync('start/routes.js', route_content);
-      this.success('Route added')
-    } catch (err) {
-      this.error("Unable to add routes in start/routes.js")
-    }
+
 
     //ALL DONE
     this.success(args.name + " module has been generated. Make sure to adjust the followings:")
-    console.log(this.chalk.bold('\t=> Move route to route group (if any)\n\t=> DB Table related to this model exists\n\t=> Add rules in Validator and link to route (if required)'))
+    console.log(this.chalk.blue('\t=> Move route to route group (if any)\n\t=> Check DB Table related to this model exists\n\t=> Add rules in Validator and link to route (if required)'))
   }
 }
 

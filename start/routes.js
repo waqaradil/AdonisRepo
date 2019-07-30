@@ -33,5 +33,7 @@ Route.group(()=>{
         [['tasks.store'],['Task']]
       ]
     ))
-
 }).prefix('api/v1/')
+
+
+Route.resource('game','Api/GameController')
