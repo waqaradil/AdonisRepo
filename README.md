@@ -13,6 +13,7 @@ All we need to do is to create a module that will generate some files such as Co
 
 3. setup `.env` file
 
+4. Make Migrations
 
 ## Setup
 Use this command to generate files
@@ -20,6 +21,8 @@ Use this command to generate files
 ```bash
 adonis module module_name model_name
 ```
+
+#### Note: Model name should be the singular version of your database table name.
 
 During this command execution, you will be asked if you need a Validator or not.
 
