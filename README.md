@@ -13,7 +13,7 @@ All we need to do is to create a module that will generate some files such as Co
 
 3. setup `.env` file
 
-4. Make Migrations
+4. Make Migrations or Manually create database
 
 ## Setup
 Use this command to generate files
