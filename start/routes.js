@@ -27,13 +27,8 @@ Route.group(()=>{
       [['users.delete'],['DeleteUser']]
     ]))
 
-  Route.resource('tasks','Api/TaskController')
-    .validator(new Map(
-      [
-        [['tasks.store'],['Task']]
-      ]
-    ))
 }).prefix('api/v1/')
 
 
-Route.resource('game','Api/GameController')
+
+
