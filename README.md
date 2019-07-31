@@ -34,4 +34,4 @@ Note: The deleted module will be available in App/RecycleBin/
 
 NOTE: Carefully read the cli instructions after command execution.
 
-### Let me know if the issue and let's expand this to the next level.
+### Let me know the issues and let's expand this to the next level.
