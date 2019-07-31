@@ -15,12 +15,6 @@
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use('Factory')
 
-Factory.blueprint('App/Models/Task', async (faker,i,data) => {
-  return {
-    task_name: faker.sentence()
-  }
-})
-
 
 Factory.blueprint('App/Models/User', async(faker) => {
   return {
