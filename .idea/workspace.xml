@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="34d57cef-35d3-4360-bc3d-ad9a608f675e" name="Default Changelist" comment="" />
+    <list default="true" id="34d57cef-35d3-4360-bc3d-ad9a608f675e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,10 +17,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/start/routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="460">
+                <caret line="39" column="112" lean-forward="true" selection-start-line="39" selection-start-column="112" selection-end-line="39" selection-end-column="112" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -49,7 +55,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/config/shield.js" />
         <option value="$PROJECT_DIR$/server/database/migrations/1503248427885_user.js" />
         <option value="$PROJECT_DIR$/server/app/Models/User.js" />
         <option value="$PROJECT_DIR$/server/database/migrations/1564082436404_tasks_schema.js" />
@@ -98,8 +103,9 @@
         <option value="$PROJECT_DIR$/app/Commands/Module.js" />
         <option value="$USER_HOME$/Desktop/adonis_crud.postman_collection.json" />
         <option value="$PROJECT_DIR$/database/factory.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/start/routes.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -122,17 +128,6 @@
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -184,7 +179,7 @@
       <workItem from="1564417159974" duration="11604000" />
       <workItem from="1564436723772" duration="18502000" />
       <workItem from="1564613989190" duration="1521000" />
-      <workItem from="1564616467539" duration="770000" />
+      <workItem from="1564616467539" duration="2575000" />
     </task>
     <task id="LOCAL-00001" summary="Fix duplicate files">
       <created>1564175787139</created>
@@ -235,22 +230,37 @@
       <option name="project" value="LOCAL" />
       <updated>1564616836043</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Removed unwanted files">
+      <created>1564617413948</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1564617413948</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Updated README.md">
+      <created>1564618269973</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1564618269973</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103744000" />
+    <option name="totallyTimeSpent" value="105549000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="-8" width="1845" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.24958494" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24958494" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.37798545" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="2" visible="true" weight="0.32917964" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5002767" side_tool="true" visible="true" weight="0.32917964" />
+      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.4997233" visible="true" weight="0.32917964" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32917964" />
@@ -275,7 +285,8 @@
     <MESSAGE value="Generate Module from command &quot;adonis module name model&quot;" />
     <MESSAGE value="Delete Module command-ACE &#10;-&gt; adonis module name model --rollback" />
     <MESSAGE value="Removed unwanted files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unwanted files" />
+    <MESSAGE value="Updated README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README.md" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -286,13 +297,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Middleware/ConvertEmptyStringsToNull.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@adonisjs/ace/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -475,16 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="527">
-            <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/Http/BaseController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -499,10 +493,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/start/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        <state relative-caret-position="374">
+          <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="460">
+            <caret line="39" column="112" lean-forward="true" selection-start-line="39" selection-start-column="112" selection-end-line="39" selection-end-column="112" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

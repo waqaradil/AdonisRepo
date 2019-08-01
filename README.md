@@ -33,8 +33,10 @@ In case of typo error or you want to delete a module. simply run this command:
 ```bash
 adonis module module_name model_name --rollback
 ```
-Note: The deleted module will be available in App/RecycleBin/
+The deleted module will be available in App/RecycleBin/
 
 NOTE: Carefully read the cli instructions after command execution.
+
+That's all. Test your module crud api with postman. Don't forget to seed the database before testing in postman.
 
 ### Let me know the issues and let's expand this to the next level.
