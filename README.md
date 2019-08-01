@@ -1,6 +1,6 @@
 # Adonis Repository Pattern
 
-This is the basic boilerplate for AdonisJs, it comes with ready-made CRUD operation
+This is the basic boilerplate for AdonisJs 4.1, it comes with ready-made CRUD operation
 
 The Repository pattern has Base Repository where all the CRUD functions are defined. 
 
