@@ -39,4 +39,16 @@ NOTE: Carefully read the cli instructions after command execution.
 
 That's all. Test your module crud api with postman. Don't forget to seed the database before testing in postman.
 
+### Choosing between mysql and mongoose
+You can choose either mongoose or mysql as data source, steps to perform database selection:
+* copy .env.example placed on root and rename it to .env
+  * uncomment ```DB_CONNECTION``` and related params for either mysql or mongodb - currently only 4 basic operations (CRUD) are available on module creation. 
+* when a new module is generated, the generator will create models for both mysql and mongodb
+* Make sure both databases have same structure in order work perfectly for switching between mongo and mysql
+
+### Coming up next
+* Postman export file on module creation
+* GUI for creating Database
+
+
 ### Let me know the issues and let's expand this to the next level.
