@@ -136,9 +136,9 @@ class Module extends Command {
       "  }\n" +
       "\n" +
       "  //Link Model and collection, in case where model name mismatch collection name\n" +
-      "  /*static get schemaOptions() {\n" +
-      "    return { collection: \"Users\", };\n" +
-      "  }*/\n" +
+      "  static get schemaOptions() {\n" +
+      "    return { collection: '"+pluralize.plural(args.model)+"', };\n" +
+      "  }\n" +
       "}\n" +
       "\n" +
       "module.exports = "+singular_model_name+".buildModel('"+singular_model_name+"')\n"

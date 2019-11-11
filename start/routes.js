@@ -34,3 +34,4 @@ Route.group(()=>{
 
 
 
+Route.resource('song','Api/SongController')

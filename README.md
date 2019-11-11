@@ -26,6 +26,9 @@ adonis module module_name model_name
 
 During this command execution, you will be asked if you need a Validator or not.
 
+***************
+**Note:** The Routes  needs to be copied inside the ```api/v1/ route group```
+***************
 
 ### Deleting a module
 In case of typo error or you want to delete a module. simply run this command:
@@ -45,6 +48,12 @@ You can choose either mongoose or mysql as data source, steps to perform databas
   * uncomment ```DB_CONNECTION``` and related params for either mysql or mongodb - currently only 4 basic operations (CRUD) are available on module creation. 
 * when a new module is generated, the generator will create models for both mysql and mongodb
 * Make sure both databases have same structure in order work perfectly for switching between mongo and mysql
+
+***************
+**Problem:** What if the Model name is different from your mongodb collection name? 
+
+**Solution:** Navigate to App/Models/NoSql/```ModelName```  Look for a function ```schemaOptions()``` and change the collection name. 
+***************
 
 ### Coming up next
 * Postman export file on module creation
