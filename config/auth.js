@@ -2,7 +2,7 @@
 
 /** @type {import('@adonisjs/framework/src/Env')} */
 const Env = use('Env')
-
+const Config =  use('Config')
 module.exports = {
   /*
   |--------------------------------------------------------------------------
@@ -27,9 +27,11 @@ module.exports = {
   | Session authentication is always persistent.
   |
   */
+
+
   session: {
-    serializer: 'lucid',
-    model: 'App/Models/User',
+    serializer: Env.get('DB_CONNECTION') === 'mysql' ? 'lucid' : 'mongoose',
+    model: `${Config.get('constants.modelPath')}User`,
     scheme: 'session',
     uid: 'email',
     password: 'password'
@@ -49,8 +51,8 @@ module.exports = {
   |
   */
   basic: {
-    serializer: 'lucid',
-    model: 'App/Models/User',
+    serializer: Env.get('DB_CONNECTION') === 'mysql' ? 'lucid' : 'mongoose',
+    model: `${Config.get('constants.modelPath')}User`,
     scheme: 'basic',
     uid: 'email',
     password: 'password'
@@ -66,8 +68,8 @@ module.exports = {
   |
   */
   jwt: {
-    serializer: 'lucid',
-    model: 'App/Models/User',
+    serializer: Env.get('DB_CONNECTION') === 'mysql' ? 'lucid' : 'mongoose',
+    model: `${Config.get('constants.modelPath')}User`,
     scheme: 'jwt',
     uid: 'email',
     password: 'password',
@@ -85,8 +87,8 @@ module.exports = {
   |
   */
   api: {
-    serializer: 'lucid',
-    model: 'App/Models/User',
+    serializer: Env.get('DB_CONNECTION') === 'mysql' ? 'lucid' : 'mongoose',
+    model: `${Config.get('constants.modelPath')}User`,
     scheme: 'api',
     uid: 'email',
     password: 'password'

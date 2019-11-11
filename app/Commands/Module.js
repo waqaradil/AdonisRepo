@@ -5,6 +5,7 @@ const _case = require('case')
 const pluralize = require('pluralize')
 const fs = require('fs')
 const fse = require('fs-extra')
+const Env = use('Env')
 
 class Module extends Command {
   static get signature () {
@@ -43,7 +44,8 @@ class Module extends Command {
       let files_to_be_deleted = [
         'app/Repositories/'+args.name+'Repository.js',
         'app/Controllers/Http/Api/'+args.name+'Controller.js',
-        'app/Models/'+args.model+'.js',
+        'app/Models/Sql/'+args.model+'.js',
+        'app/Models/NoSql/'+args.model+'.js',
         'app/Validators/'+args.name+'.js'
       ]
 
@@ -85,16 +87,16 @@ class Module extends Command {
     /****************************
      *CREATE
      ****************************/
-
-    //MODEL CODE
-    let model_content = "'use strict'\n" +
+    let singular_model_name = pluralize.singular(args.model)
+    //SQL MODEL CODE
+    let model_sql_content = "'use strict'\n" +
       "\n" +
       "/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */\n" +
       "const Model = use('Model')\n" +
       "\n" +
-      "class "+pluralize.singular(args.model)+" extends Model {\n" +
+      "class "+singular_model_name+" extends Model {\n" +
       "  static get table(){\n" +
-      "    return '"+pluralize.plural(args.model).toLowerCase()+"'\n" +
+      "    return '"+pluralize.plural(args.model)+"'\n" +
       "  }\n" +
       "\n" +
       "  static get primaryKey(){\n" +
@@ -106,28 +108,66 @@ class Module extends Command {
 
 
 
-    //REPOSITORY CODE
-    let repository_content = "'use strict'\n" +
+
+    //NOSQL MODEL CODE
+
+    let model_nosql_content = "'use strict'\n" +
       "\n" +
-      "const { ioc } = require('@adonisjs/fold')\n" +
-      "const BaseRepository = use('BaseRepository')\n" +
-      "class "+args.name+"Repository extends BaseRepository{\n" +
+      "const BaseModel = use('MongooseModel')\n" +
       "\n" +
-      "  constructor(model){\n" +
-      "    super(model)\n" +
-      "    this.model = model\n" +
+      "/**\n" +
+      " * @class "+singular_model_name+"\n" +
+      " */\n" +
+      "class "+singular_model_name+" extends BaseModel {\n" +
+      "  static boot ({ schema }) {\n" +
+      "    // Hooks:\n" +
+      "    // this.addHook('preSave', () => {})\n" +
+      "    // this.addHook('preSave', '"+singular_model_name+"Hook.method')\n" +
+      "    // Indexes:\n" +
+      "    // this.index({}, {background: true})\n" +
+      "  }\n" +
+      "  /**\n" +
+      "   * "+singular_model_name+"'s schema\n" +
+      "   */\n" +
+      "  static get schema () {\n" +
+      "    return {\n" +
+      "\n" +
+      "    }\n" +
       "  }\n" +
       "\n" +
+      "  //Link Model and collection, in case where model name mismatch collection name\n" +
+      "  /*static get schemaOptions() {\n" +
+      "    return { collection: \"Users\", };\n" +
+      "  }*/\n" +
       "}\n" +
       "\n" +
-      "ioc.singleton('IoC"+args.name+"Repository', function (app) {\n" +
-      "  const Model = app.use('App/Models/"+args.model+"')\n" +
-      "  return new "+args.name+"Repository(Model)\n" +
-      "})\n" +
-      "\n" +
-      "module.exports = ioc.use('IoC"+args.name+"Repository')\n" +
-      "\n";
+      "module.exports = "+singular_model_name+".buildModel('"+singular_model_name+"')\n"
 
+
+    //REPOSITORY CODE
+
+
+    let repository_content =  `'use strict'
+const { ioc } = require('@adonisjs/fold')
+const BaseRepository = use('App/Repositories/BaseRepository')
+const Config = use('Config')
+
+class ${args.name}Repository extends BaseRepository{
+
+  constructor(model){
+    super(model)
+    this.model = model
+  }
+
+}
+
+ioc.singleton('${args.name}Repository', function (app) {
+  const Model = app.use(Config.get('constants.modelPath')+'${args.model}')
+  return new ${args.name}Repository(Model)
+})
+
+module.exports = ioc.use('${args.name}Repository')
+`
 
     //CONTROLLER CODE
     let controller_content = "'use strict'\n" +
@@ -200,13 +240,22 @@ class Module extends Command {
       this.info(args.name+"Repository is created")
     }
 
-    //WRITING MODEL FILES
-    const model_exists = await this.pathExists('app/Models/'+args.model+'.js')
-    if(model_exists){
+    //WRITING SQL MODEL FILES
+    const model_sql_exists = await this.pathExists('app/Models/Sql/'+args.model+'.js')
+    if(model_sql_exists){
       this.warn(args.model+" (Model) already exists")
     }else{
-      await this.writeFile('app/Models/'+args.model+'.js',model_content)
-      this.info(args.model+" (Model) is created")
+      await this.writeFile('app/Models/Sql/'+args.model+'.js',model_sql_content)
+      this.info(args.model+" (SQL Model) is created")
+    }
+
+    //WRITING NOSQL MODEL FILES
+    const model_nosql_exists = await this.pathExists('app/Models/NoSql/'+args.model+'.js')
+    if(model_nosql_exists){
+      this.warn(args.model+" (Model) already exists")
+    }else{
+      await this.writeFile('app/Models/NoSql/'+args.model+'.js',model_nosql_content)
+      this.info(args.model+" (NOSQL Model) is created")
     }
 
     //WRITING ROUTES FILE
