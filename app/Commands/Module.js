@@ -149,7 +149,7 @@ class Module extends Command {
 
     let repository_content =  `'use strict'
 const { ioc } = require('@adonisjs/fold')
-const BaseRepository = use('App/Repositories/BaseRepository')
+const BaseRepository = use('App/Repositories/_BaseRepository')
 const Config = use('Config')
 
 class ${args.name}Repository extends BaseRepository{

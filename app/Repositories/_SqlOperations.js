@@ -1,4 +1,4 @@
-class SqlOperations {
+class _SqlOperations {
 
   constructor(model){
     this.model = model
@@ -75,4 +75,4 @@ class SqlOperations {
   }
 }
 
-module.exports = SqlOperations
+module.exports = _SqlOperations

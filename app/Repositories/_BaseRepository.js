@@ -8,9 +8,9 @@ const Env = use('Env')
 
 const _ = require('lodash')
 
-const db_operations = use(Env.get('DB_CONNECTION') === 'mysql' ? 'App/Repositories/SqlOperations' : 'App/Repositories/NoSqlOperations')
+const db_operations = use(Env.get('DB_CONNECTION') === 'mysql' ? 'App/Repositories/_SqlOperations' : 'App/Repositories/_NoSqlOperations')
 
-class BaseRepository{
+class _BaseRepository{
 
 
   constructor(model){
@@ -55,5 +55,5 @@ class BaseRepository{
 
 }
 
-module.exports = BaseRepository
+module.exports = _BaseRepository
 

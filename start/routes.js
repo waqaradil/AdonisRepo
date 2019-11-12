@@ -26,12 +26,5 @@ Route.group(()=>{
       [['users.update'],['UpdateUser']],
       [['users.delete'],['DeleteUser']]
     ]))
-
-  Route.resource('song','Api/SongController')
-  Route.resource('game','Api/GameController')
 }).prefix('api/v1/')
 
-
-
-
-Route.resource('song','Api/SongController')

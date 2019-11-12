@@ -1,4 +1,4 @@
-class NoSqlOperations{
+class _NoSqlOperations{
 
   constructor(model){
     this.model = model
@@ -34,4 +34,4 @@ class NoSqlOperations{
   }
 }
 
-module.exports = NoSqlOperations
+module.exports = _NoSqlOperations
