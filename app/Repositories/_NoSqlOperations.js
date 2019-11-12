@@ -6,7 +6,7 @@ class _NoSqlOperations{
 
   //Get all records
   async index(response){
-    let result = await this.model.find()
+    let result = await this.model.find().lean()
     return response.json({data:result})
   }
 
