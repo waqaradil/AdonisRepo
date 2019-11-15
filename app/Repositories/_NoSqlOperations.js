@@ -28,15 +28,15 @@ class _NoSqlOperations{
       modelObj[i] = e
     })
 
-    console.log()
-    return modelObj
     await modelObj.save()
+
+    return response.status(201).json({msg: this.model.name + ' created successfully',data:modelObj})
   }
 
 
   //Show single record
   async show(params,response){
-    const modelObj = await this.model.find({_id:params.id}).lean()
+    const modelObj = await this.model.findOne({_id:params.id}).lean()
     if(!modelObj){
       return response.status(404).json({msg:this.noRecordFound})
     }
@@ -46,12 +46,36 @@ class _NoSqlOperations{
 
   //Update a record
   async update(params,request,response){
-    return true
+    try {
+      const input = request.all()
+
+      const modelObj = await this.model.updateOne({_id:params.id},input)
+
+      return response.status(200).json({msg: this.model.name + ' has been updated', data:modelObj})
+    }catch (e) {
+      return response.status(400).json({error: `Unable to update ${this.model.name}`, reason:e.message})
+    }
+
   }
 
 
   async destroy(params,response){
-    return true
+    try {
+      let hasRecord = await this.model.findOne({_id:params.id})
+
+      if(!hasRecord){
+        return response.status(404).json({error:this.noRecordFound})
+      }
+
+      const modelObj = await this.model.deleteOne({_id:params.id},function(err){
+        return response.status(400).json({error: err})
+      })
+
+      return response.status(200).json({msg:this.model.name+ " deleted",data:modelObj})
+    }catch (e) {
+      return response.status(400).json({error: `Unable to delete ${this.model.name}`, reason:e.message})
+    }
+
   }
 }
 

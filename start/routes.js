@@ -22,7 +22,7 @@ Route.on('/').render('welcome')
 Route.group(()=>{
   Route.resource('users','Api/UserController')
     .validator(new Map([
-      [['users.store'], ['SaveUser']],
+      // [['users.store'], ['SaveUser']],
       [['users.update'],['UpdateUser']],
       [['users.delete'],['DeleteUser']]
     ]))
