@@ -1,7 +1,12 @@
+'use strict'
+
+const _ = require('lodash')
+
 class _SqlOperations {
 
   constructor(model){
     this.model = model
+    this.noRecordFound = 'No record found'
   }
 
  //Get all records

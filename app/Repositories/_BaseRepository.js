@@ -6,7 +6,7 @@
 
 const Env = use('Env')
 
-const _ = require('lodash')
+
 
 const db_operations = use(Env.get('DB_CONNECTION') === 'mysql' ? 'App/Repositories/_SqlOperations' : 'App/Repositories/_NoSqlOperations')
 
@@ -15,7 +15,6 @@ class _BaseRepository{
 
   constructor(model){
     this.model = model
-    this.noRecordFound = 'No record found'
     this.db_obj = new db_operations(this.model)
   }
 

@@ -18,7 +18,8 @@ class User extends BaseModel {
    */
   static get schema () {
     return {
-
+      name:'String',
+      job:'String'
     }
   }
 
