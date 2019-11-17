@@ -1,0 +1,20 @@
+'use strict'
+const { ioc } = require('@adonisjs/fold')
+const BaseRepository = use('App/Repositories/_BaseRepository')
+const Config = use('Config')
+
+class SongRepository extends BaseRepository{
+  #model
+  constructor(model){
+    super(model)
+    this.model = model
+  }
+
+}
+
+ioc.singleton('SongRepository', function (app) {
+  const model = app.use(Config.get('constants.modelPath')+'Song')
+  return new SongRepository(model)
+})
+
+module.exports = ioc.use('SongRepository')

@@ -12,10 +12,9 @@ const db_operations = use(Env.get('DB_CONNECTION') === 'mysql' ? 'App/Repositori
 
 class _BaseRepository{
 
-
+  #db_obj;
   constructor(model){
-    this.model = model
-    this.db_obj = new db_operations(this.model)
+    this.#db_obj = new db_operations(model)
   }
 
 
@@ -26,30 +25,30 @@ class _BaseRepository{
 
   //Get all records
   async index(response){
-    return this.db_obj.index(response)
+    return this.#db_obj.index(response)
   }
 
 
   //Save a record
   async store(request,response){
-    return this.db_obj.store(request,response)
+    return this.#db_obj.store(request,response)
   }
 
 
   //Show single record
   async show(params,response){
-     return this.db_obj.show(params,response)
+     return this.#db_obj.show(params,response)
   }
 
 
   //Update a record
   async update(params,request,response){
-    return this.db_obj.update(params,request,response)
+    return this.#db_obj.update(params,request,response)
   }
 
 
   async destroy(params,response){
-    return this.db_obj.destroy(params,response)
+    return this.#db_obj.destroy(params,response)
   }
 
 }

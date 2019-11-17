@@ -1,0 +1,12 @@
+'use strict'
+
+const SongRepo = use('App/Repositories/SongRepository')
+const BaseController = use('BaseController')
+class SongController extends BaseController {
+  
+  constructor(){
+    super(SongRepo)
+  }
+  
+}
+module.exports = SongController

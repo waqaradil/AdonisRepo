@@ -26,5 +26,7 @@ Route.group(()=>{
       [['users.update'],['UpdateUser']],
       [['users.delete'],['DeleteUser']]
     ]))
+  Route.delete('delete-all-users','Api/UserController.deleteAllUsers')
 }).prefix('api/v1/')
+
 

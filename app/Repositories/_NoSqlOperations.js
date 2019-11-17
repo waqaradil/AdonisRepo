@@ -77,6 +77,7 @@ class _NoSqlOperations{
     }
 
   }
+
 }
 
 module.exports = _NoSqlOperations
