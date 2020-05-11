@@ -19,14 +19,14 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
-Route.group(()=>{
-  Route.resource('users','Api/UserController')
-    .validator(new Map([
-      // [['users.store'], ['SaveUser']],
-      [['users.update'],['UpdateUser']],
-      [['users.delete'],['DeleteUser']]
-    ]))
-  Route.delete('delete-all-users','Api/UserController.deleteAllUsers')
+Route.group(() => {
+    Route.resource('users', 'Api/UserController')
+        .validator(new Map([
+            // [['users.store'], ['SaveUser']],
+            [['users.update'], ['UpdateUser']],
+            [['users.delete'], ['DeleteUser']]
+        ]))
+    Route.delete('delete-all-users', 'Api/UserController.deleteAllUsers')
 }).prefix('api/v1/')
 
 

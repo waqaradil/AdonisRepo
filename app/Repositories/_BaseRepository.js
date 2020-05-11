@@ -24,10 +24,9 @@ class _BaseRepository{
   }
 
   //Get all records
-  async index(response){
-    return this.#db_obj.index(response)
+  async index(ctx,order = ['id', 'asc']){
+    return this.#db_obj.index(ctx,order)
   }
-
 
   //Save a record
   async store(request,response){

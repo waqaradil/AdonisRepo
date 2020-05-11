@@ -12,8 +12,8 @@ class BaseController{
     this.repo = repo
   }
 
-  async index({response}){
-    return this.repo.index(response)
+  async index(ctx){
+    return this.repo.index(ctx)
   }
 
   async store({request,response}){
