@@ -4,8 +4,16 @@
     <bookmark url="file://$PROJECT_DIR$/config/auth.js" line="71" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34d57cef-35d3-4360-bc3d-ad9a608f675e" name="Default Changelist" comment="- Changed SQL Operations / NoSql_Operations return statement to Model Directly instead response.json()&#10;- FIX: In model, table name was changed to lowercase and snake_case &#10;- In database config, changed Mongo_ prefix to DB_&#10;- Put #model in Repository constructor&#10;- Modified base functions (store) for request param, Now it will accept plain object as well as request object&#10;- Added base Validator and extend all validator with parent.&#10;- Modified new validators and only contain rules object that will override parent rule object.">
+    <list default="true" id="34d57cef-35d3-4360-bc3d-ad9a608f675e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/Handler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/NotFoundException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Helpers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Middleware/Authenticated.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Middleware/NotAuthenticated.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start/hooks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/kernel.js" beforeDir="false" afterPath="$PROJECT_DIR$/start/kernel.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,7 +29,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Commands/Module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3111">
+            <state relative-caret-position="648">
               <caret line="183" selection-start-line="183" selection-end-line="183" />
             </state>
           </provider>
@@ -30,17 +38,45 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/start/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+            <state relative-caret-position="427">
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/database.js">
+        <entry file="file://$PROJECT_DIR$/start/hooks.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
+            <state relative-caret-position="153">
+              <caret line="9" column="60" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Helpers/index.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Middleware/NotAuthenticated.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/start/kernel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="51" column="73" selection-start-line="51" selection-start-column="73" selection-end-line="51" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -57,17 +93,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controllers/Http/BaseController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="306">
               <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Repositories/_BaseRepository.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+            <state relative-caret-position="455">
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
             </state>
           </provider>
         </entry>
@@ -119,7 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Controllers/Http/UserController.js" />
         <option value="$PROJECT_DIR$/app/Controllers/Http/Api/TaskController.js" />
         <option value="$PROJECT_DIR$/app/Validators/UpdateUser.js" />
         <option value="$PROJECT_DIR$/app/Repositories/TaskRepository.js" />
@@ -170,6 +205,7 @@
         <option value="$PROJECT_DIR$/app/Validators/BaseValidator.js" />
         <option value="$PROJECT_DIR$/app/Commands/Module.js" />
         <option value="$PROJECT_DIR$/start/routes.js" />
+        <option value="$PROJECT_DIR$/start/kernel.js" />
       </list>
     </option>
   </component>
@@ -185,7 +221,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,12 +236,25 @@
             <path>
               <item name="AdonisRepo" type="b2602c69:ProjectViewProjectNode" />
               <item name="AdonisRepo" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdonisRepo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdonisRepo" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdonisRepo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdonisRepo" type="462c0819:PsiDirectoryNode" />
               <item name="start" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,6 +316,7 @@
       <workItem from="1589164527478" duration="3864000" />
       <workItem from="1589767422373" duration="141000" />
       <workItem from="1589850757586" duration="30000" />
+      <workItem from="1589857463183" duration="593000" />
     </task>
     <task id="LOCAL-00001" summary="Fix duplicate files">
       <created>1564175787139</created>
@@ -402,23 +451,30 @@
       <option name="project" value="LOCAL" />
       <updated>1589166636526</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="- Added Logout Route">
+      <created>1589857500326</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1589857500326</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157064000" />
+    <option name="totallyTimeSpent" value="157657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="-8" width="1845" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25826332" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.26106444" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="npm" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4991699" weight="0.23883697" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4991699" visible="true" weight="0.23883697" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5008301" side_tool="true" weight="0.37798545" />
-      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.4991699" visible="true" weight="0.34579438" />
+      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.4991699" weight="0.34579438" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32917964" />
@@ -499,7 +555,8 @@
     <MESSAGE value="Updated ReadMe" />
     <MESSAGE value="Added Update and Delete functions in no sql model" />
     <MESSAGE value="- Changed SQL Operations / NoSql_Operations return statement to Model Directly instead response.json()&#10;- FIX: In model, table name was changed to lowercase and snake_case &#10;- In database config, changed Mongo_ prefix to DB_&#10;- Put #model in Repository constructor&#10;- Modified base functions (store) for request param, Now it will accept plain object as well as request object&#10;- Added base Validator and extend all validator with parent.&#10;- Modified new validators and only contain rules object that will override parent rule object." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Changed SQL Operations / NoSql_Operations return statement to Model Directly instead response.json()&#10;- FIX: In model, table name was changed to lowercase and snake_case &#10;- In database config, changed Mongo_ prefix to DB_&#10;- Put #model in Repository constructor&#10;- Modified base functions (store) for request param, Now it will accept plain object as well as request object&#10;- Added base Validator and extend all validator with parent.&#10;- Modified new validators and only contain rules object that will override parent rule object." />
+    <MESSAGE value="- Added Logout Route" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added Logout Route" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -559,11 +616,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Models/Sql/Test.js" />
-    <entry file="file://$PROJECT_DIR$/app/Models/NoSql/Test.js" />
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Test2Repository.js" />
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Test3Repository.js" />
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Test6Repository.js" />
     <entry file="file://$PROJECT_DIR$/app/Repositories/Test7Repository.js" />
     <entry file="file://$PROJECT_DIR$/app/Repositories/Test5Repository.js" />
     <entry file="file://$PROJECT_DIR$/app/Repositories/Test4Repository.js" />
@@ -711,17 +763,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Commands/Module.js">
+    <entry file="file://$PROJECT_DIR$/config/database.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3111">
-          <caret line="183" selection-start-line="183" selection-end-line="183" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/start/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+        <state relative-caret-position="1496">
+          <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -732,24 +777,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/Http/BaseController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="306">
           <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Repositories/_BaseRepository.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        <state relative-caret-position="455">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Middleware/NotAuthenticated.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/start/kernel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="51" column="73" selection-start-line="51" selection-start-column="73" selection-end-line="51" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Commands/Module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="183" selection-start-line="183" selection-end-line="183" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/start/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/start/hooks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="60" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Helpers/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
         </state>
       </provider>
     </entry>
