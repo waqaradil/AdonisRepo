@@ -30,3 +30,7 @@ Route.group(() => {
 }).prefix('api/v1/')
 
 
+Route.get('logout', async ({auth, response}) => {
+    await auth.logout()
+    response.redirect('login')
+})
