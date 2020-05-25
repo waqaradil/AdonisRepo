@@ -53,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/start/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="59" column="55" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+            <state relative-caret-position="538">
+              <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -306,7 +306,7 @@
       <workItem from="1589767422373" duration="141000" />
       <workItem from="1589850757586" duration="30000" />
       <workItem from="1589857463183" duration="667000" />
-      <workItem from="1590373472650" duration="634000" />
+      <workItem from="1590373472650" duration="717000" />
     </task>
     <task id="LOCAL-00001" summary="Fix duplicate files">
       <created>1564175787139</created>
@@ -455,11 +455,18 @@
       <option name="project" value="LOCAL" />
       <updated>1589858097016</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added alias in app.js for myHelper">
+      <created>1590374653668</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1590374653668</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158365000" />
+    <option name="totallyTimeSpent" value="158448000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="-8" width="1845" height="1096" extended-state="6" />
@@ -554,7 +561,8 @@
     <MESSAGE value="- Changed SQL Operations / NoSql_Operations return statement to Model Directly instead response.json()&#10;- FIX: In model, table name was changed to lowercase and snake_case &#10;- In database config, changed Mongo_ prefix to DB_&#10;- Put #model in Repository constructor&#10;- Modified base functions (store) for request param, Now it will accept plain object as well as request object&#10;- Added base Validator and extend all validator with parent.&#10;- Modified new validators and only contain rules object that will override parent rule object." />
     <MESSAGE value="- Added Logout Route" />
     <MESSAGE value="- Added hooks.js&#10;- Middlewares&#10;- Exceptions&#10;- myHelper" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added hooks.js&#10;- Middlewares&#10;- Exceptions&#10;- myHelper" />
+    <MESSAGE value="Added alias in app.js for myHelper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added alias in app.js for myHelper" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -831,8 +839,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/start/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="59" column="55" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+        <state relative-caret-position="538">
+          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
         </state>
       </provider>
     </entry>

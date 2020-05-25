@@ -150,10 +150,10 @@ const BaseRepository = use('App/Repositories/_BaseRepository')
 const Config = use('Config')
 
 class ${args.name}Repository extends BaseRepository{
-  #model
+  model
   constructor(model){
     super(model)
-    this.#model = model
+    this.model = model
   }
 
 }
