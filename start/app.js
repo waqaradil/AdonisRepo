@@ -57,7 +57,8 @@ const aliases = {
   TaskRepository:'App/Repositories/TaskRepository',
 
   //Controllers
-  BaseController: 'App/Controllers/Http/BaseController'
+  BaseController: 'App/Controllers/Http/BaseController',
+  myHelpers: 'App/Helpers'
 
 }
 
