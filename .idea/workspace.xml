@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="34d57cef-35d3-4360-bc3d-ad9a608f675e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Commands/Module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Commands/Module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/UserRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/UserRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/start/routes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +22,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Commands/Module.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Sql/Test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="20" selection-end-column="21" />
+              <folding>
+                <marker date="1592655837375" expanded="true" signature="280:507" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Testing.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/start/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            <state relative-caret-position="170">
+              <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -37,38 +67,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Helpers/index.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" column="48" lean-forward="true" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/start/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
+            <state relative-caret-position="641">
               <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Middleware/NotAuthenticated.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/start/kernel.js">
+        <entry file="file://$PROJECT_DIR$/config/constants.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="51" column="73" selection-start-line="51" selection-start-column="73" selection-end-line="51" selection-end-column="73" />
+            <state relative-caret-position="153">
+              <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -127,6 +138,7 @@
       <find>knex</find>
       <find>this.</find>
       <find>snake</find>
+      <find>#model</find>
     </findStrings>
     <replaceStrings>
       <replace>users</replace>
@@ -147,7 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Controllers/Http/Api/TaskController.js" />
         <option value="$PROJECT_DIR$/app/Validators/UpdateUser.js" />
         <option value="$PROJECT_DIR$/app/Repositories/TaskRepository.js" />
         <option value="$PROJECT_DIR$/app/Models/Task.js" />
@@ -194,10 +205,11 @@
         <option value="$PROJECT_DIR$/app/Controllers/Http/Api/TestUserController.js" />
         <option value="$PROJECT_DIR$/config/database.js" />
         <option value="$PROJECT_DIR$/app/Validators/BaseValidator.js" />
-        <option value="$PROJECT_DIR$/app/Commands/Module.js" />
-        <option value="$PROJECT_DIR$/start/routes.js" />
         <option value="$PROJECT_DIR$/start/kernel.js" />
         <option value="$PROJECT_DIR$/start/app.js" />
+        <option value="$PROJECT_DIR$/start/routes.js" />
+        <option value="$PROJECT_DIR$/app/Models/Sql/Test.js" />
+        <option value="$PROJECT_DIR$/app/Commands/Module.js" />
       </list>
     </option>
   </component>
@@ -213,7 +225,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,17 +241,20 @@
               <item name="AdonisRepo" type="b2602c69:ProjectViewProjectNode" />
               <item name="AdonisRepo" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Helpers" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AdonisRepo" type="b2602c69:ProjectViewProjectNode" />
               <item name="AdonisRepo" type="462c0819:PsiDirectoryNode" />
-              <item name="start" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
+              <item name="Sql" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -253,16 +267,16 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Projects\AdonisRepo\app\Models\Sql" />
+      <recent name="G:\Projects\AdonisJs\server\app\Controllers\Http\Api" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\Projects\AdonisRepo\AdonisRepo\app" />
       <recent name="G:\Projects\AdonisRepo\AdonisRepo\app\Middleware" />
       <recent name="G:\Projects\AdonisRepo\AdonisRepo\start" />
       <recent name="G:\Projects\AdonisRepo\AdonisRepo" />
       <recent name="G:\Projects\AdonisRepo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\Projects\AdonisRepo\app\Models\Sql" />
-      <recent name="G:\Projects\AdonisJs\server\app\Controllers\Http\Api" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -307,6 +321,8 @@
       <workItem from="1589850757586" duration="30000" />
       <workItem from="1589857463183" duration="667000" />
       <workItem from="1590373472650" duration="717000" />
+      <workItem from="1590378329716" duration="80000" />
+      <workItem from="1592655299910" duration="623000" />
     </task>
     <task id="LOCAL-00001" summary="Fix duplicate files">
       <created>1564175787139</created>
@@ -462,31 +478,47 @@
       <option name="project" value="LOCAL" />
       <updated>1590374653668</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Changed the model access modifier in repository">
+      <created>1590378388485</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1590378388486</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158448000" />
+    <option name="totallyTimeSpent" value="159151000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="83" y="-8" width="1845" height="1096" extended-state="6" />
+    <frame x="83" y="-8" width="1845" height="1216" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.26386556" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2694678" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="npm" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4991699" weight="0.23883697" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4991699" visible="true" weight="0.23822714" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5008301" side_tool="true" weight="0.37798545" />
       <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.4991699" weight="0.34579438" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32917964" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.32917964" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.32871652" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39875388" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.32963988" />
       <window_info anchor="bottom" id="REST Client" order="11" weight="0.32917964" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -562,7 +594,8 @@
     <MESSAGE value="- Added Logout Route" />
     <MESSAGE value="- Added hooks.js&#10;- Middlewares&#10;- Exceptions&#10;- myHelper" />
     <MESSAGE value="Added alias in app.js for myHelper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added alias in app.js for myHelper" />
+    <MESSAGE value="Changed the model access modifier in repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the model access modifier in repository" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -622,8 +655,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Test5Repository.js" />
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Test4Repository.js" />
     <entry file="file://$PROJECT_DIR$/app/Repositories/TestRepository.js" />
     <entry file="file://$PROJECT_DIR$/app/Repositories/Test8Repository.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/require-stack/src/index.js" />
@@ -642,13 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -775,29 +799,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Commands/Module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3111">
-          <caret line="183" selection-start-line="183" selection-end-line="183" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/start/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/start/hooks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="60" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Helpers/index.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="48" lean-forward="true" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Middleware/NotAuthenticated.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -830,17 +840,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.js">
+    <entry file="file://$PROJECT_DIR$/start/hooks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="48" lean-forward="true" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+        <state relative-caret-position="153">
+          <caret line="9" column="60" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/start/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
+        <state relative-caret-position="641">
           <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/start/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Testing.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Sql/Test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="20" selection-end-column="21" />
+          <folding>
+            <marker date="1592655837375" expanded="true" signature="280:507" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Commands/Module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
         </state>
       </provider>
     </entry>

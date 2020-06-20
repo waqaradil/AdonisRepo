@@ -34,3 +34,9 @@ Route.get('logout', async ({auth, response}) => {
     await auth.logout()
     response.redirect('login')
 })
+
+Route.resource('test','Api/TestController')
+Route.resource('test','Api/TestController')
+Route.resource('test','Api/TestController')
+Route.resource('test','Api/TestController')
+Route.resource('test','Api/TestController')

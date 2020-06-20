@@ -88,22 +88,28 @@ class Module extends Command {
          ****************************/
         let singular_model_name = pluralize.singular(args.model)
         //SQL MODEL CODE
-        let model_sql_content = "'use strict'\n" +
-            "\n" +
-            "/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */\n" +
-            "const Model = use('Model')\n" +
-            "\n" +
-            "class " + singular_model_name + " extends Model {\n" +
-            "  static get table(){\n" +
-            "    return '" + pluralize.plural(_case.snake(args.model)) + "'\n" +
-            "  }\n" +
-            "\n" +
-            "  static get primaryKey(){\n" +
-            "    return 'id'\n" +
-            "  }\n" +
-            "}\n" +
-            "\n" +
-            "module.exports = " + args.model;
+
+        let model_sql_content = `'use strict'
+/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
+const Model = use('Model')
+const moment = use('moment')
+
+class ${singular_model_name} extends Model {
+    static get table() {
+        return '${pluralize.plural(_case.snake(args.model))}'
+    }
+
+    static get primaryKey() {
+        return 'id'
+    }
+
+    // getCreatedAtAgo({created_at}) {
+    //     let formattedDate = moment(created_at).format(Config.get('constants.db_date_format'))
+    //     return moment(formattedDate, Config.get('constants.db_date_format')).fromNow()
+    // }
+}
+
+module.exports = ${args.model}`
 
 
         //NOSQL MODEL CODE
